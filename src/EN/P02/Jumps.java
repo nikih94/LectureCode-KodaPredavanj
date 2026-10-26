@@ -1,6 +1,7 @@
 package EN.P02;
 
 public class Jumps {
+
     public static void main(String[] args) {
         int[] array = {32, 87, 3, 589, 12, 1076, 2000, 12, 622, 127};
         int target = 12;
@@ -17,6 +18,17 @@ public class Jumps {
         for(int num : array){
             System.out.print(num+" ");
         }
+        int area = calcArea(5,7);
+        System.out.println();
+        System.out.println("Rectangle area: " + area);
+        System.out.println("Rectangle area: " + calcArea(3,4));
+        System.out.println("Rectangle area: " + calcArea(5,5));
+    }
+
+    public static int calcArea(int width, int height){
+        int area;
+        area= width * height;
+        return area;
     }
 
 }
