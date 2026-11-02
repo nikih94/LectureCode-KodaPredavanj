@@ -3,7 +3,7 @@ package SLO.P02;
 public class Main {
     //To-Do
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         int stevilo = 14;
 
@@ -143,11 +143,46 @@ public class Main {
         long result2 = maxValue2 + 1;        // -2,147,483,648 (overflow)
         System.out.println(result2);
 
-        for (long i = 0; true ; i+=1_000_000) {
-            System.out.println(i);
+        //for (long i = 0; true ; i+=1_000_000) {
+        //    System.out.println(i);
+        //}
+
+        //skoki
+        for(int i = 0; i < 30 ; i++){
+            if(i==21){
+                break;
+            }
+            System.out.print(i+" ");
         }
 
+        System.out.println();
+        for(int i = 0; i < 30 ; i++){
+            if(i==21){
+                continue;
+            }
+            System.out.print(i+" ");
+        }
+        System.out.println();
+
+        // Metode
+
+        int ploscina = ploscina(5,4);
+        System.out.println("Plsocina: "+ploscina);
+        obseg(5,4);
+        obseg(10,20);
     }
 
+    public static int ploscina(int sirina , int visina){
+        return sirina * visina;
+    }
+
+    public static void obseg(int sirina, int visina){
+        int obseg = 2*sirina + 2* visina;
+        if(sirina == 10){
+            System.out.println("nocem!");
+            return;
+        }
+        System.out.println("Obseg: "+obseg);
+    }
 
 }
