@@ -4,11 +4,43 @@ public class Triangle {
 
     private static int count = 0;
 
-    int a,b;
-    int c;
+    private int a,b;
+    private int c;
     final String color;
 
+    public boolean compare(Triangle other){
+        if(this.a != other.a) return false;
+        if(this.b != other.b) return false;
+        if(this.c != other.c) return false;
+        return true;
+    }
 
+    public Triangle clone(){
+        return new Triangle(this.a,this.b,this.c,this.color);
+    }
+
+    public int getA(){
+        return a;
+    }
+    public void setA(int a){
+        this.a = a;
+    }
+
+    public int getB() {
+        return b;
+    }
+
+    public void setB(int b) {
+        this.b = b;
+    }
+
+    public int getC() {
+        return c;
+    }
+
+    public void setC(int c) {
+        this.c = c;
+    }
 
     Triangle(int a, int b, int c, String color){
         this.a = a;
@@ -32,6 +64,13 @@ public class Triangle {
         c = sideC;
         count++;
         color="nothing";
+    }
+
+    public Triangle returnLarger(Triangle other){
+        if(this.getPerimeter() > other.getPerimeter()){
+           return this;
+        }
+        return other;
     }
 
     public static int getCountOfTriangles(){
