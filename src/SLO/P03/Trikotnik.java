@@ -7,6 +7,47 @@ public class Trikotnik {
     private int a, b, c;
     private final String barva;
 
+    //metoda instance, ki sprejme trikotnik in vrne vecjega po obsegu
+    public Trikotnik vecjiObseg(Trikotnik drugi){
+        if(drugi.obseg() > this.obseg()){
+            return drugi;
+        }
+        return this;
+    }
+    //kloniraj predmet
+    public Trikotnik clone(){
+        return new Trikotnik(this.a,this.b,this.c,this.barva);
+    }
+
+    public boolean enak(Trikotnik drugi){
+        if(this.a != drugi.a) return false;
+        if(this.b != drugi.b) return false;
+        if(this.c != drugi.c) return false;
+        return true;
+    }
+
+
+    //getter
+    public int getA(){
+        return a;
+    }
+    //setter
+    public void setA(int a){
+        this.a = a;
+    }
+
+    public int getB() {
+        return b;
+    }
+
+    public int getC() {
+        return c;
+    }
+
+    public String getBarva() {
+        return barva;
+    }
+
     private static int stTrikotnikov = 0; // static stevec ki steje koliko trik smo ustvarili
 
     public static int getStTrikotnikov(){
